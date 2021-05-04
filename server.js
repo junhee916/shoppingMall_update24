@@ -16,7 +16,8 @@ app.use(bodyParser.urlencoded({extended : false}))
 app.use(cors())
 app.use(morgan('dev'))
 
-require('./config/database')
+const connectDB = require('./config/database')
+connectDB()
 
 app.use('/uploads', express.static('uploads'))
 
